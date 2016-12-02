@@ -1,0 +1,30 @@
+{
+  "name": "idevicekit",
+  "version": "0.0.1",
+  "description": "NodeJs wrapper for libimobiledevice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebeet/idevicekit.git"
+  },
+  "keywords": [
+    "idevice",
+    "iOS"
+  ],
+  "author": "TheBeet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thebeet/idevicekit/issues"
+  },
+  "homepage": "https://github.com/thebeet/idevicekit#readme",
+  "dependencies": {
+    "plist": "^2.0.1",
+    "sharp": "^0.16.2",
+    "shelljs": "^0.7.5",
+    "tempfile": "^1.1.1"
+  },
+  "engines" : { "node" : ">=6.0" } 
+}
