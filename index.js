@@ -32,11 +32,13 @@ class iDeviceClient extends EventEmitter {
     getProperties(serial, option) {
         return new Promise((resolve, reject) => {
             let cmd = 'ideviceinfo -u ' + serial + ' -x';
-            if (('simple' in option) && (option['simple'])) {
-                cmd += ' -s';
-            }
-            if (('domain' in option) && (option['domain'])) {
-                cmd += ' -q ' + option['domain'];
+            if (option) {
+                if (('simple' in option) && (option['simple'])) {
+                    cmd += ' -s';
+                }
+                if (('domain' in option) && (option['domain'])) {
+                    cmd += ' -q ' + option['domain'];
+                }
             }
             shell.exec(cmd, (code, stdout, stderr) => {
                 if (code === 0) {
@@ -85,6 +87,19 @@ class iDeviceClient extends EventEmitter {
             shell.exec(cmd, (code, stdout, stderr) => {
                 if (code === 0) {
                     resolve(sharp(tempTiffFile).toFormat(defaultOption.format));
+                } else {
+                    reject(stdout, stderr);
+                }
+            });
+        });
+    }
+
+    reboot(serial) {
+        return new Promise((resolve, reject) => {
+            let cmd = 'idevicediagnostics restart -u ' + serial;
+            shell.exec(cmd, (code, stdout, stderr) => {
+                if (code === 0) {
+                    resolve(true);
                 } else {
                     reject(stdout, stderr);
                 }
