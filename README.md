@@ -57,4 +57,31 @@ reboot using `idevicediagnostics restart`.
 * Returns: `Promise`
 * Resolves with: `success` True if success
 
+## Example
 
+```js
+let co = require('co');
+let idevicekit = require('idevicekit');
+let fs = require('fs');
+
+co(function* () {
+    let devices = yield idevicekit.listDevices();
+    for (let device of devices) {
+        let properties = yield idevicekit.getProperties(device);
+        let battery = yield idevicekit.getProperties(device, {domain: 'com.apple.mobile.battery'});
+        battery = battery['BatteryCurrentCapacity'];
+        let resolution = yield idevicekit.getProperties(device, {domain: 'com.apple.mobile.iTunes'});
+        resolution = {
+            width: resolution['ScreenWidth'],
+            height: resolution['ScreenHeight']
+        };
+        console.log(`${device}: ${properties['DeviceName']}`);
+        console.log(`    model: ${properties['ProductType']}`);
+        console.log(`    battery: ${battery}`);
+        console.log(`    resolution: ${resolution['width']}x${resolution['height']}`);
+        let screenshotStream = yield idevicekit.screencap(device);
+        screenshotStream.pipe(fs.createWriteStream(device + '.png'));
+    }
+});
+
+```
