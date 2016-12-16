@@ -23,8 +23,12 @@
   "dependencies": {
     "plist": "^2.0.1",
     "sharp": "^0.16.2",
-    "shelljs": "^0.7.5",
     "tempfile": "^1.1.1"
   },
-  "engines" : { "node" : ">=6.0" } 
+  "engines": {
+    "node": ">=6.0"
+  },
+  "devDependencies": {
+    "co": "^4.6.0"
+  }
 }

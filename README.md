@@ -39,7 +39,13 @@ Retrieves the properties of the device identified by the given serial number. Th
 ### idevicekit.getPackages(serial, [option])
 
 Retrieves the list of packages present on the device. This is analogous to `ideviceinstaller`.
-
+* **serial** The serial number of the device. Corresponds to the device ID in `idevicekit.listDevices()`.
+* **option** Optional. The following options are supported, use `ideviceinstaller --help` to learn more
+    - **list** List apps, possible options:
+       - **user**: list user apps only (this is the default)
+       - **system**: list system apps only
+       - **all**: list all types of apps
+    
 * Returns: `Promise`
 * Resolves with: `packages` An array of app package
 
@@ -50,6 +56,13 @@ Takes a screenshot in PNG format using `idevicescreenshot`.
 * Returns: `Promise`
 * Resolves with: `screencap` An PNG stream.
 
+### idevicekit.install(serial, ipa)
+
+Installs the IPA on the device, This is analogous to `ideviceinstaller -i <ipa>`
+
+* Returns: `Promise`
+* Resolves with: `output` output of install command
+
 ### idevicekit.reboot(serial)
 
 reboot using `idevicediagnostics restart`. 
@@ -57,31 +70,36 @@ reboot using `idevicediagnostics restart`.
 * Returns: `Promise`
 * Resolves with: `success` True if success
 
+## shortcut API
+
+### getResolution(serial)
+### getStorage(serial)
+### getBattery(serial)
+
 ## Example
 
 ```js
 let co = require('co');
-let idevicekit = require('idevicekit');
+let idevicekit = require('./index');
 let fs = require('fs');
 
 co(function* () {
     let devices = yield idevicekit.listDevices();
     for (let device of devices) {
         let properties = yield idevicekit.getProperties(device);
-        let battery = yield idevicekit.getProperties(device, {domain: 'com.apple.mobile.battery'});
-        battery = battery['BatteryCurrentCapacity'];
-        let resolution = yield idevicekit.getProperties(device, {domain: 'com.apple.mobile.iTunes'});
-        resolution = {
-            width: resolution['ScreenWidth'],
-            height: resolution['ScreenHeight']
-        };
+        let battery = (yield idevicekit.getBattery(device)).level;
+        let resolution = yield idevicekit.getResolution(device);
+        let status = yield idevicekit.getDeveloperStatus(device);
         console.log(`${device}: ${properties['DeviceName']}`);
         console.log(`    model: ${properties['ProductType']}`);
         console.log(`    battery: ${battery}`);
         console.log(`    resolution: ${resolution['width']}x${resolution['height']}`);
+        console.log(`    status: ${status}`);
         let screenshotStream = yield idevicekit.screencap(device);
         screenshotStream.pipe(fs.createWriteStream(device + '.png'));
     }
+}).catch((err) => {
+    console.log(err);
 });
 
 ```
