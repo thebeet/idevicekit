@@ -124,8 +124,8 @@ class iDeviceClient extends EventEmitter {
         return this.getProperties(serial, {domain: 'com.apple.mobile.iTunes'})
             .then((result) => {
                 return {
-                    width: result['ScreenHeight'],
-                    height: result['ScreenWidth'],
+                    width: result['ScreenWidth'],
+                    height: result['ScreenHeight'],
                     scale: result['ScreenScaleFactor']
                 };
             });
