@@ -112,11 +112,12 @@ class iDeviceClient extends EventEmitter {
 
     syslog(serial, ipa) {
         if (!_checkSerial(serial)) return Promise.reject('invalid serial number');
+        let patternFile = require('path').join(__dirname, 'patterns.yml');
         let spawn = require('child_process').spawn;
         let emitter = new EventEmitter();
         let process = spawn('idevicesyslog', ['-u', serial]);
         let Logparser = require('logagent-js');
-        let lp = new Logparser();
+        let lp = new Logparser(patternFile);
         process.stdout.setEncoding('utf8');
         process.stdout.on('data', (data) => {
             let str = data.toString(),

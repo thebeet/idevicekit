@@ -16,14 +16,14 @@ co(function* () {
         console.log(`    status: ${status}`);
         let screenshotStream = yield idevicekit.screencap(device);
         screenshotStream.pipe(fs.createWriteStream(device + '.png'));
-        /*idevicekit.syslog(device).then((emitter) => {
+        idevicekit.syslog(device).then((emitter) => {
             emitter.on('log', (data) => {
                 console.log(JSON.stringify(data));
             });
             setTimeout(() => {
                 emitter.emit('close');
             }, 10000);
-        });*/
+        });
     }
 }).catch((err) => {
     console.log(err);

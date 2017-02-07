@@ -1,0 +1,9 @@
+patterns:
+ - 
+  match:
+    -
+      type: system_log
+      regex: !!js/regexp /^([\w|\s]+\s+\d{1,2}\s[\d|\:]+)\s(\S+)\s(\S+)\[(\d+)\]\s{0,4}<(.+)>\:\s{0,2}(.+)/
+      fields: [ts,host,service,pid,severity,message]
+      dateFormat: MMM D HH:mm:ss
+
