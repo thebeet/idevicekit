@@ -110,6 +110,35 @@ class iDeviceClient extends EventEmitter {
         });
     }
 
+    syslog(serial, ipa) {
+        if (!_checkSerial(serial)) return Promise.reject('invalid serial number');
+        let spawn = require('child_process').spawn;
+        let emitter = new EventEmitter();
+        let process = spawn('idevicesyslog', ['-u', serial]);
+        let Logparser = require('logagent-js');
+        let lp = new Logparser();
+        process.stdout.setEncoding('utf8');
+        process.stdout.on('data', (data) => {
+            let str = data.toString(),
+                lines = str.split(/(\r?\n)/g);
+            for (let line of lines) {
+                lp.parseLine(line, 'log', (err, data) => {
+                    if (err) {
+                    } else {
+                        emitter.emit('log', data);
+                    }
+                });
+            }
+        });
+        process.stdout.on('end', () => {
+            emitter.emit('close');
+        });
+        emitter.on('close', () => {
+            process.kill();
+        });
+        return Promise.resolve(emitter);
+    }
+
     reboot(serial) {
         if (!_checkSerial(serial)) return Promise.reject('invalid serial number');
         let cmd = 'idevicediagnostics restart -u ' + serial;

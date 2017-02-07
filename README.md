@@ -39,6 +39,7 @@ Retrieves the properties of the device identified by the given serial number. Th
 ### idevicekit.getPackages(serial, [option])
 
 Retrieves the list of packages present on the device. This is analogous to `ideviceinstaller`.
+
 * **serial** The serial number of the device. Corresponds to the device ID in `idevicekit.listDevices()`.
 * **option** Optional. The following options are supported, use `ideviceinstaller --help` to learn more
     - **list** List apps, possible options:
@@ -62,6 +63,16 @@ Installs the IPA on the device, This is analogous to `ideviceinstaller -i <ipa>`
 
 * Returns: `Promise`
 * Resolves with: `output` output of install command
+
+### idevicekit.syslog(serial)
+
+Retrieves syslog on the device, This is analogous to `idevicesyslog`
+
+* **serial** The serial number of the device. Corresponds to the device ID in `idevicekit.listDevices()`.
+* Returns: `Promise`
+* Resolves with: `emitter` emit "log" event when log come
+
+idevicesyslog will continue running until a 'close' event emit to emitter
 
 ### idevicekit.reboot(serial)
 
@@ -97,6 +108,14 @@ co(function* () {
         console.log(`    status: ${status}`);
         let screenshotStream = yield idevicekit.screencap(device);
         screenshotStream.pipe(fs.createWriteStream(device + '.png'));
+        idevicekit.syslog(device).then((emitter) => {
+            emitter.on('log', (data) => {
+                console.log(JSON.stringify(data));
+            });
+            setTimeout(() => {
+                emitter.emit('close');
+            }, 10000);
+        });
     }
 }).catch((err) => {
     console.log(err);

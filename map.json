@@ -1,0 +1,380 @@
+{
+    "iPhone4,1": {
+        "name": "iPhone 4S",
+        "resolution": {
+            "width": "640",
+            "height": "960"
+        },
+        "RAM": "512MB"
+    },
+    "iPhone5,1": {
+        "name": "iPhone 5",
+        "resolution": {
+            "width": "640",
+            "height": "1136"
+        },
+        "RAM": "1G"
+    },
+    "iPhone5,2": {
+        "name": "iPhone 5",
+        "resolution": {
+            "width": "640",
+            "height": "1136"
+        },
+        "RAM": "1G"
+    },
+    "iPhone5,3": {
+        "name": "iPhone 5C",
+        "resolution": {
+            "width": "640",
+            "height": "1136"
+        },
+        "RAM": "1G"
+    },
+    "iPhone5,4": {
+        "name": "iPhone 5C",
+        "resolution": {
+            "width": "640",
+            "height": "1136"
+        },
+        "RAM": "1G"
+    },
+    "iPhone6,1": {
+        "name": "iPhone 5S",
+        "resolution": {
+            "width": "640",
+            "height": "1136"
+        },
+        "RAM": "1G"
+    },
+    "iPhone6,2": {
+        "name": "iPhone 5S",
+        "resolution": {
+            "width": "640",
+            "height": "1136"
+        },
+        "RAM": "1G"
+    },
+    "iPhone7,1": {
+        "name": "iPhone 6 PLUS",
+        "resolution": {
+            "width": "1080",
+            "height": "1920"
+        },
+        "RAM": "1G"
+    },
+    "iPhone7,2": {
+        "name": "iPhone 6",
+        "resolution": {
+            "width": "750",
+            "height": "1334"
+        },
+        "RAM": "1G"
+    },
+    "iPhone8,1": {
+        "name": "iPhone 6S",
+        "resolution": {
+            "width": "750",
+            "height": "1334"
+        },
+        "RAM": "2G"
+    },
+    "iPhone8,2": {
+        "name": "iPhone 6S PLUS",
+        "resolution": {
+            "width": "1080",
+            "height": "1920"
+        },
+        "RAM": "2G"
+    },
+    "iPhone8,4": {
+        "name": "iPhone SE",
+        "resolution": {
+            "width": "640",
+            "height": "1136"
+        },
+        "RAM": "2G"
+    },
+    "iPhone9,1": {
+        "name": "iPhone 7",
+        "resolution": {
+            "width": "750",
+            "height": "1334"
+        },
+        "RAM": "2G"
+    },
+    "iPhone9,2": {
+        "name": "iPhone 7 PLUS",
+        "resolution": {
+            "width": "1080",
+            "height": "1920"
+        },
+        "RAM": "3G"
+    },
+    "iPhone9,3": {
+        "name": "iPhone 7",
+        "resolution": {
+            "width": "750",
+            "height": "1334"
+        },
+        "RAM": "2G"
+    },
+    "iPhone9,4": {
+        "name": "iPhone 7 PLUS",
+        "resolution": {
+            "width": "1080",
+            "height": "1920"
+        },
+        "RAM": "3G"
+    },
+    "iPad1,1": {
+        "name": "iPad",
+        "resolution": {
+            "width": "768",
+            "height": "1024"
+        },
+        "RAM": "256MB"
+    },
+    "iPad2,1": {
+        "name": "iPad 2",
+        "resolution": {
+            "width": "768",
+            "height": "1024"
+        },
+        "RAM": "512MB"
+    },
+    "iPad2,2": {
+        "name": "iPad 2",
+        "resolution": {
+            "width": "768",
+            "height": "1024"
+        },
+        "RAM": "512MB"
+    },
+    "iPad2,3": {
+        "name": "iPad 2",
+        "resolution": {
+            "width": "768",
+            "height": "1024"
+        },
+        "RAM": "512MB"
+    },
+    "iPad2,4": {
+        "name": "iPad 2",
+        "resolution": {
+            "width": "768",
+            "height": "1024"
+        },
+        "RAM": "512MB"
+    },
+    "iPad2,5": {
+        "name": "iPad mini",
+        "resolution": {
+            "width": "768",
+            "height": "1024"
+        },
+        "RAM": "512MB"
+    },
+    "iPad2,6": {
+        "name": "iPad mini",
+        "resolution": {
+            "width": "768",
+            "height": "1024"
+        },
+        "RAM": "512MB"
+    },
+    "iPad2,7": {
+        "name": "iPad mini",
+        "resolution": {
+            "width": "768",
+            "height": "1024"
+        },
+        "RAM": "512MB"
+    },
+    "iPad3,1": {
+        "name": "iPad 3",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "1G"
+    },
+    "iPad3,2": {
+        "name": "iPad 3",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "1G"
+    },
+    "iPad3,2": {
+        "name": "iPad 3",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "1G"
+    },
+    "iPad3,4": {
+        "name": "iPad 4",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "1G"
+    },
+    "iPad3,5": {
+        "name": "iPad 4",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "1G"
+    },
+    "iPad3,6": {
+        "name": "iPad 4",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "1G"
+    },
+    "iPad4,1": {
+        "name": "iPad Air",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "1G"
+    },
+    "iPad4,2": {
+        "name": "iPad Air",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "1G"
+    },
+    "iPad4,3": {
+        "name": "iPad Air",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "1G"
+    },
+    "iPad4,4": {
+        "name": "iPad mini 2",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "1G"
+    },
+    "iPad4,5": {
+        "name": "iPad mini 2",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "1G"
+    },
+    "iPad4,6": {
+        "name": "iPad mini 2",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "1G"
+    },
+    "iPad4,7": {
+        "name": "iPad mini 3",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "1G"
+    },
+    "iPad4,8": {
+        "name": "iPad mini 3",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "1G"
+    },
+    "iPad4,9": {
+        "name": "iPad mini 3",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "1G"
+    },
+    "iPad5,1": {
+        "name": "iPad mini 4",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "2G"
+    },
+    "iPad5,2": {
+        "name": "iPad mini 4",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "2G"
+    },
+    "iPad5,3": {
+        "name": "iPad Air 2",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "2G"
+    },
+    "iPad5,4": {
+        "name": "iPad Air 2",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "2G"
+    },
+    "iPad6,3": {
+        "name": "iPad Pro (9.7 inch)",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "2G"
+    },
+    "iPad6,4": {
+        "name": "iPad Pro (9.7 inch)",
+        "resolution": {
+            "width": "1536",
+            "height": "2048"
+        },
+        "RAM": "2G"
+    },
+    "iPad6,7": {
+        "name": "iPad Pro (12.9 inch)",
+        "resolution": {
+            "width": "2048",
+            "height": "2732"
+        },
+        "RAM": "4G"
+    },
+    "iPad6,8": {
+        "name": "iPad Pro (12.9 inch)",
+        "resolution": {
+            "width": "2048",
+            "height": "2732"
+        },
+        "RAM": "4G"
+    }
+}
+
+

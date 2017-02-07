@@ -1,6 +1,6 @@
 {
   "name": "idevicekit",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "NodeJs wrapper for libimobiledevice",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/thebeet/idevicekit#readme",
   "dependencies": {
+    "logagent-js": "^1.2.39",
     "plist": "^2.0.1",
     "sharp": "^0.16.2",
     "tempfile": "^1.1.1"
