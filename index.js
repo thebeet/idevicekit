@@ -150,6 +150,18 @@ class iDeviceClient extends EventEmitter {
 
     // ## shortcut method ##
 
+    getBasicInformation(serial) {
+        return this.getProperties(serial, {simple: true})
+            .then((result) => {
+                let type = result['ProductType'];
+                let map = require('./map.json');
+                if (type in map) {
+                    return map[type];
+                }
+                return {};
+            });
+    }
+
     getResolution(serial) {
         return this.getProperties(serial, {domain: 'com.apple.mobile.iTunes'})
             .then((result) => {

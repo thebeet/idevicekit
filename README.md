@@ -83,6 +83,10 @@ reboot using `idevicediagnostics restart`.
 
 ## shortcut API
 
+### idevicekit.getBasicInformation(serial, [option])
+
+Basic device information from Apple, such as CPU, RAM, Official Name
+
 ### getResolution(serial)
 ### getStorage(serial)
 ### getBattery(serial)

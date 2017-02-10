@@ -1,379 +1,629 @@
 {
+    "iPhone1,1": {
+        "name": "iPhone",
+        "ram": "128MB",
+        "cpu": {
+            "name": "Samsung 1176JZ",
+            "freq": "412MHz",
+            "L1": "32KB",
+            "core": 1
+        }
+    },
+    "iPhone1,2": {
+        "name": "iPhone 3G",
+        "ram": "128MB",
+        "cpu": {
+            "name": "Samsung 1176JZ",
+            "freq": "412MHz",
+            "L1": "32KB",
+            "core": 1
+        }
+    },
+    "iPhone2,1": {
+        "name": "iPhone 3GS",
+        "ram": "256MB",
+        "cpu": {
+            "name": "Samsung S5PC100",
+            "freq": "600MHz",
+            "L1": "64KB",
+            "L2": "256KB",
+            "core": 1
+        }
+    },
+    "iPhone3,1": {
+        "name": "iPhone 4",
+        "ram": "512MB",
+        "cpu": {
+            "name": "Apple A4",
+            "freq": "800MHz",
+            "L1": "64KB",
+            "L2": "512KB",
+            "core": 1
+        }
+    },
+    "iPhone3,3": {
+        "name": "iPhone 4",
+        "ram": "512MB",
+        "cpu": {
+            "name": "Apple A4",
+            "freq": "800MHz",
+            "L1": "64KB",
+            "L2": "512KB",
+            "core": 1
+        }
+    },
     "iPhone4,1": {
         "name": "iPhone 4S",
-        "resolution": {
-            "width": "640",
-            "height": "960"
-        },
-        "RAM": "512MB"
+        "ram": "512MB",
+        "cpu": {
+            "name": "Apple A5",
+            "freq": "800MHz",
+            "L1": "64KB",
+            "L2": "1MB",
+            "core": 2
+        }
     },
     "iPhone5,1": {
         "name": "iPhone 5",
-        "resolution": {
-            "width": "640",
-            "height": "1136"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A6",
+            "freq": "1.3GHz",
+            "L1": "64KB",
+            "L2": "1MB",
+            "core": 2
+        }
     },
     "iPhone5,2": {
         "name": "iPhone 5",
-        "resolution": {
-            "width": "640",
-            "height": "1136"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A6",
+            "freq": "1.3GHz",
+            "L1": "64KB",
+            "L2": "1MB",
+            "core": 2
+        }
     },
     "iPhone5,3": {
         "name": "iPhone 5C",
-        "resolution": {
-            "width": "640",
-            "height": "1136"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A6",
+            "freq": "1.3GHz",
+            "L1": "64KB",
+            "L2": "1MB",
+            "core": 2
+        }
     },
     "iPhone5,4": {
         "name": "iPhone 5C",
-        "resolution": {
-            "width": "640",
-            "height": "1136"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A6",
+            "freq": "1.3GHz",
+            "L1": "64KB",
+            "L2": "1MB",
+            "core": 2
+        }
     },
     "iPhone6,1": {
         "name": "iPhone 5S",
-        "resolution": {
-            "width": "640",
-            "height": "1136"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A7",
+            "freq": "1.3GHz",
+            "L1": "128KB",
+            "L2": "1MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M7"
+        }
     },
     "iPhone6,2": {
         "name": "iPhone 5S",
-        "resolution": {
-            "width": "640",
-            "height": "1136"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A7",
+            "freq": "1.3GHz",
+            "L1": "128KB",
+            "L2": "1MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M7"
+        }
     },
     "iPhone7,1": {
         "name": "iPhone 6 PLUS",
-        "resolution": {
-            "width": "1080",
-            "height": "1920"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A8",
+            "freq": "1.4GHz",
+            "L1": "128KB",
+            "L2": "1MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M8"
+        }
     },
     "iPhone7,2": {
         "name": "iPhone 6",
-        "resolution": {
-            "width": "750",
-            "height": "1334"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A8",
+            "freq": "1.4GHz",
+            "L1": "128KB",
+            "L2": "1MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M8"
+        }
     },
     "iPhone8,1": {
         "name": "iPhone 6S",
-        "resolution": {
-            "width": "750",
-            "height": "1334"
-        },
-        "RAM": "2G"
+        "ram": "2G",
+        "cpu": {
+            "name": "Apple A9",
+            "freq": "1.85GHz",
+            "L1": "128KB",
+            "L2": "3MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M9"
+        }
     },
     "iPhone8,2": {
         "name": "iPhone 6S PLUS",
-        "resolution": {
-            "width": "1080",
-            "height": "1920"
-        },
-        "RAM": "2G"
+        "ram": "2G",
+        "cpu": {
+            "name": "Apple A9",
+            "freq": "1.85GHz",
+            "L1": "128KB",
+            "L2": "3MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M9"
+        }
     },
     "iPhone8,4": {
         "name": "iPhone SE",
-        "resolution": {
-            "width": "640",
-            "height": "1136"
-        },
-        "RAM": "2G"
+        "ram": "2G",
+        "cpu": {
+            "name": "Apple A9",
+            "freq": "1.85GHz",
+            "L1": "128KB",
+            "L2": "3MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M9"
+        }
     },
     "iPhone9,1": {
         "name": "iPhone 7",
-        "resolution": {
-            "width": "750",
-            "height": "1334"
-        },
-        "RAM": "2G"
+        "ram": "2G",
+        "cpu": {
+            "name": "Apple A10",
+            "freq": "2.34GHz",
+            "L1": "128KB",
+            "L2": "3MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M10"
+        }
     },
     "iPhone9,2": {
         "name": "iPhone 7 PLUS",
-        "resolution": {
-            "width": "1080",
-            "height": "1920"
-        },
-        "RAM": "3G"
+        "ram": "3G",
+        "cpu": {
+            "name": "Apple A10",
+            "freq": "2.34GHz",
+            "L1": "128KB",
+            "L2": "3MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M10"
+        }
     },
     "iPhone9,3": {
         "name": "iPhone 7",
-        "resolution": {
-            "width": "750",
-            "height": "1334"
-        },
-        "RAM": "2G"
+        "ram": "2G",
+        "cpu": {
+            "name": "Apple A10",
+            "freq": "2.34GHz",
+            "L1": "128KB",
+            "L2": "3MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M10"
+        }
     },
     "iPhone9,4": {
         "name": "iPhone 7 PLUS",
-        "resolution": {
-            "width": "1080",
-            "height": "1920"
-        },
-        "RAM": "3G"
+        "ram": "3G",
+        "cpu": {
+            "name": "Apple A10",
+            "freq": "2.34GHz",
+            "L1": "128KB",
+            "L2": "3MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M10"
+        }
     },
     "iPad1,1": {
         "name": "iPad",
-        "resolution": {
-            "width": "768",
-            "height": "1024"
-        },
-        "RAM": "256MB"
+        "ram": "256MB",
+        "cpu": {
+            "name": "Apple A4",
+            "freq": "800MHz",
+            "L1": "64KB",
+            "L2": "512KB",
+            "core": 1
+        }
     },
     "iPad2,1": {
         "name": "iPad 2",
-        "resolution": {
-            "width": "768",
-            "height": "1024"
-        },
-        "RAM": "512MB"
+        "ram": "512MB",
+        "cpu": {
+            "name": "Apple A5",
+            "freq": "1GHz",
+            "L1": "64KB",
+            "L2": "1MB",
+            "core": 2
+        }
     },
     "iPad2,2": {
         "name": "iPad 2",
-        "resolution": {
-            "width": "768",
-            "height": "1024"
-        },
-        "RAM": "512MB"
+        "ram": "512MB",
+        "cpu": {
+            "name": "Apple A5",
+            "freq": "1GHz",
+            "L1": "64KB",
+            "L2": "1MB",
+            "core": 2
+        }
     },
     "iPad2,3": {
         "name": "iPad 2",
-        "resolution": {
-            "width": "768",
-            "height": "1024"
-        },
-        "RAM": "512MB"
+        "ram": "512MB",
+        "cpu": {
+            "name": "Apple A5",
+            "freq": "1GHz",
+            "L1": "64KB",
+            "L2": "1MB",
+            "core": 2
+        }
     },
     "iPad2,4": {
         "name": "iPad 2",
-        "resolution": {
-            "width": "768",
-            "height": "1024"
-        },
-        "RAM": "512MB"
+        "ram": "512MB",
+        "cpu": {
+            "name": "Apple A5",
+            "freq": "1GHz",
+            "L1": "64KB",
+            "L2": "1MB",
+            "core": 2
+        }
     },
     "iPad2,5": {
         "name": "iPad mini",
-        "resolution": {
-            "width": "768",
-            "height": "1024"
-        },
-        "RAM": "512MB"
+        "ram": "512MB",
+        "cpu": {
+            "name": "Apple A5",
+            "freq": "1GHz",
+            "L1": "64KB",
+            "L2": "1MB",
+            "core": 2
+        }
     },
     "iPad2,6": {
         "name": "iPad mini",
-        "resolution": {
-            "width": "768",
-            "height": "1024"
-        },
-        "RAM": "512MB"
+        "ram": "512MB",
+        "cpu": {
+            "name": "Apple A5",
+            "freq": "1GHz",
+            "L1": "64KB",
+            "L2": "1MB",
+            "core": 2
+        }
     },
     "iPad2,7": {
         "name": "iPad mini",
-        "resolution": {
-            "width": "768",
-            "height": "1024"
-        },
-        "RAM": "512MB"
+        "ram": "512MB",
+        "cpu": {
+            "name": "Apple A5",
+            "freq": "1GHz",
+            "L1": "64KB",
+            "L2": "1MB",
+            "core": 2
+        }
     },
     "iPad3,1": {
         "name": "iPad 3",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A5X",
+            "freq": "1GHz",
+            "L1": "64KB",
+            "L2": "1MB",
+            "core": 2
+        }
     },
     "iPad3,2": {
         "name": "iPad 3",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A5X",
+            "freq": "1GHz",
+            "L1": "64KB",
+            "L2": "1MB",
+            "core": 2
+        }
     },
     "iPad3,2": {
         "name": "iPad 3",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A5X",
+            "freq": "1GHz",
+            "L1": "64KB",
+            "L2": "1MB",
+            "core": 2
+        }
     },
     "iPad3,4": {
         "name": "iPad 4",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A6X",
+            "freq": "1.4GHz",
+            "L1": "64KB",
+            "L2": "1MB",
+            "core": 2
+        }
     },
     "iPad3,5": {
         "name": "iPad 4",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A6X",
+            "freq": "1.4GHz",
+            "L1": "64KB",
+            "L2": "1MB",
+            "core": 2
+        }
     },
     "iPad3,6": {
         "name": "iPad 4",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A6X",
+            "freq": "1.4GHz",
+            "L1": "64KB",
+            "L2": "1MB",
+            "core": 2
+        }
     },
     "iPad4,1": {
         "name": "iPad Air",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A7",
+            "freq": "1.4GHz",
+            "L1": "128KB",
+            "L2": "1MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M7"
+        }
     },
     "iPad4,2": {
         "name": "iPad Air",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A7",
+            "freq": "1.4GHz",
+            "L1": "128KB",
+            "L2": "1MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M7"
+        }
     },
     "iPad4,3": {
         "name": "iPad Air",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A7",
+            "freq": "1.4GHz",
+            "L1": "128KB",
+            "L2": "1MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M7"
+        }
     },
     "iPad4,4": {
         "name": "iPad mini 2",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A7",
+            "freq": "1.3GHz",
+            "L1": "128KB",
+            "L2": "1MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M7"
+        }
     },
     "iPad4,5": {
         "name": "iPad mini 2",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A7",
+            "freq": "1.3GHz",
+            "L1": "128KB",
+            "L2": "1MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M7"
+        }
     },
     "iPad4,6": {
         "name": "iPad mini 2",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A7",
+            "freq": "1.3GHz",
+            "L1": "128KB",
+            "L2": "1MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M7"
+        }
     },
     "iPad4,7": {
         "name": "iPad mini 3",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A7",
+            "freq": "1.3GHz",
+            "L1": "128KB",
+            "L2": "1MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M7"
+        }
     },
     "iPad4,8": {
         "name": "iPad mini 3",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A7",
+            "freq": "1.3GHz",
+            "L1": "128KB",
+            "L2": "1MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M7"
+        }
     },
     "iPad4,9": {
         "name": "iPad mini 3",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "1G"
+        "ram": "1G",
+        "cpu": {
+            "name": "Apple A7",
+            "freq": "1.3GHz",
+            "L1": "128KB",
+            "L2": "1MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M7"
+        }
     },
     "iPad5,1": {
         "name": "iPad mini 4",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "2G"
+        "ram": "2G",
+        "cpu": {
+            "name": "Apple A8",
+            "freq": "1.5GHz",
+            "L1": "128KB",
+            "L2": "1MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M8"
+        }
     },
     "iPad5,2": {
         "name": "iPad mini 4",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "2G"
+        "ram": "2G",
+        "cpu": {
+            "name": "Apple A8",
+            "freq": "1.5GHz",
+            "L1": "128KB",
+            "L2": "1MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M8"
+        }
     },
     "iPad5,3": {
         "name": "iPad Air 2",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "2G"
+        "ram": "2G",
+        "cpu": {
+            "name": "Apple A8X",
+            "freq": "1.5GHz",
+            "L1": "128KB",
+            "L2": "2MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M8"
+        }
     },
     "iPad5,4": {
         "name": "iPad Air 2",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "2G"
+        "ram": "2G",
+        "cpu": {
+            "name": "Apple A8X",
+            "freq": "1.5GHz",
+            "L1": "128KB",
+            "L2": "2MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M8"
+        }
     },
     "iPad6,3": {
         "name": "iPad Pro (9.7 inch)",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "2G"
+        "ram": "2G",
+        "cpu": {
+            "name": "Apple A9X",
+            "freq": "2.16GHz",
+            "L1": "128KB",
+            "L2": "3MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M9"
+        }
     },
     "iPad6,4": {
         "name": "iPad Pro (9.7 inch)",
-        "resolution": {
-            "width": "1536",
-            "height": "2048"
-        },
-        "RAM": "2G"
+        "ram": "2G",
+        "cpu": {
+            "name": "Apple A9X",
+            "freq": "2.16GHz",
+            "L1": "128KB",
+            "L2": "3MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M9"
+        }
     },
     "iPad6,7": {
         "name": "iPad Pro (12.9 inch)",
-        "resolution": {
-            "width": "2048",
-            "height": "2732"
-        },
-        "RAM": "4G"
+        "ram": "4G",
+        "cpu": {
+            "name": "Apple A9X",
+            "freq": "2.26GHz",
+            "L1": "128KB",
+            "L2": "3MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M9"
+        }
     },
     "iPad6,8": {
         "name": "iPad Pro (12.9 inch)",
-        "resolution": {
-            "width": "2048",
-            "height": "2732"
-        },
-        "RAM": "4G"
+        "ram": "4G",
+        "cpu": {
+            "name": "Apple A9X",
+            "freq": "2.26GHz",
+            "L1": "128KB",
+            "L2": "3MB",
+            "L3": "4MB",
+            "core": 2,
+            "coprocessors": "M9"
+        }
     }
 }
 
