@@ -151,7 +151,7 @@ class iDeviceClient extends EventEmitter {
     // ## shortcut method ##
 
     getBasicInformation(serial) {
-        return this.getProperties(serial, {simple: true})
+        return this.getProperties(serial)
             .then((result) => {
                 let type = result['ProductType'];
                 let map = require('./map.json');
