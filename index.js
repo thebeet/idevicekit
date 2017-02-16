@@ -93,20 +93,39 @@ class iDeviceClient extends EventEmitter {
         });
     }
 
-    install(serial, ipa) {
+    install(serial, ipa, option) {
         if (!_checkSerial(serial)) return Promise.reject('invalid serial number');
         if (!fs.existsSync(ipa)) return Promise.reject(`ipa file ${ipa} not exists`);
+        let defaultOption = {
+            resign: false,
+            mobileprovision: './develop.mobileprovision',
+            identity: 'iPhone Developer: xxxx (XXXXXXXXXX)',
+            keychainPassword: ''
+        };
+        defaultOption = extend(true, defaultOption, option);
+        let resultPromise;
+        if (defaultOption.resign) {
+            let path = require('path');
+            let shell = path.join(__dirname, 'tools', 'r.sh');
+            let cmd = 'sh ' + shell + ' "' + ipa + '" "' + defaultOption.mobileprovision + '" "' + defaultOption.identity +
+                '" "' + ipa + '" "' + defaultOption.keychainPassword + '"';
+            resultPromise = exec(cmd, {timeout: 300000});
+        } else {
+            resultPromise = Promise.resolve();
+        }
         let cmd = 'ideviceinstaller -u ' + serial + ' -i ' + ipa;
-        return new Promise((resolve, reject) => {
-            exec(cmd, {timeout: 300000}).then((output) => {
-                if (/\s - Complete\s/.test(output)) {
-                    resolve(output);
-                } else {
-                    reject(output);
-                }
-            }, (code, stdout, stderr) => {
-                reject(code);
-            });
+        return resultPromise.then(() => {
+            return new Promise((resolve, reject) => {
+                exec(cmd, {timeout: 300000}).then((output) => {
+                    if (/\s - Complete\s/.test(output)) {
+                        resolve(output);
+                    } else {
+                        reject(output);
+                    }
+                }, (code, stdout, stderr) => {
+                    reject(code);
+                });
+            })
         });
     }
 
