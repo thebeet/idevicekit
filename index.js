@@ -184,11 +184,25 @@ class iDeviceClient extends EventEmitter {
     getResolution(serial) {
         return this.getProperties(serial, {domain: 'com.apple.mobile.iTunes'})
             .then((result) => {
-                return {
-                    width: result['ScreenWidth'],
-                    height: result['ScreenHeight'],
-                    scale: result['ScreenScaleFactor']
+                let resolution = {
+                    width: parseInt(result['ScreenWidth'], 10),
+                    height: parseInt(result['ScreenHeight'], 10),
+                    scale: parseInt(result['ScreenScaleFactor'], 10)
                 };
+                let points = {
+                    width: Math.floor(resolution.width / resolution.scale),
+                    height: Math.floor(resolution.height / resolution.scale)
+                }; 
+                if ((resolution.width === 1080) && (resolution.height === 1920)) {
+                    // There is some diffences between Physical Pixels and Rendered Pixels
+                    // on device iPhone [6,6s,7] plus.
+                    points = {
+                        width: 414,
+                        height: 736
+                    };
+                }
+                resolution.points = points;
+                return resolution;
             });
     }
 
