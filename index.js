@@ -88,8 +88,13 @@ class iDeviceClient extends EventEmitter {
         let tempfile = require('tempfile');
         let tempTiffFile = tempfile('.tiff');
         let cmd = 'idevicescreenshot -u ' + serial + ' ' + tempTiffFile;
-        return exec(cmd).then((stdout) => {
-            return sharp(tempTiffFile).toFormat(defaultOption.format);
+        return new Promise((resolve, reject) => {
+            exec(cmd).then((stdout) => {
+                let outputStream = sharp(tempTiffFile).toFormat(defaultOption.format).on('error', (err) => {
+                    reject(err);
+                });
+                resolve(outputStream);
+            }, reject);
         });
     }
 
