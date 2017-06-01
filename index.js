@@ -1,3 +1,5 @@
+
+
 let EventEmitter = require('events');
 let plist = require('plist');
 let extend = require('extend');
@@ -167,6 +169,14 @@ class iDeviceClient extends EventEmitter {
     reboot(serial) {
         if (!_checkSerial(serial)) return Promise.reject('invalid serial number');
         let cmd = 'idevicediagnostics restart -u ' + serial;
+        return exec(cmd).then(() => {
+            return true;
+        });
+    }
+
+    shutdown(serial) {
+        if (!_checkSerial(serial)) return Promise.reject('invalid serial number');
+        let cmd = 'idevicediagnostics shutdown -u ' + serial;
         return exec(cmd).then(() => {
             return true;
         });

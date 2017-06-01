@@ -81,6 +81,13 @@ reboot using `idevicediagnostics restart`.
 * Returns: `Promise`
 * Resolves with: `success` True if success
 
+### idevicekit.shutdown(serial)
+
+reboot using `idevicediagnostics shutdown`. 
+
+* Returns: `Promise`
+* Resolves with: `success` True if success
+
 ## shortcut API
 
 ### idevicekit.getBasicInformation(serial, [option])
