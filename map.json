@@ -250,6 +250,60 @@
             "coprocessors": "M10"
         }
     },
+    "iPhone10,1": {
+        "name": "iPhone 8",
+        "ram": "2G",
+        "cpu": {
+            "name": "Apple A11",
+            "freq": "2.39 GHz",
+            "core": 6
+        }
+    },
+    "iPhone10,2": {
+        "name": "iPhone 8",
+        "ram": "3G",
+        "cpu": {
+            "name": "Apple A11",
+            "freq": "2.39 GHz",
+            "core": 6
+        }
+    },
+    "iPhone10,3": {
+        "name": "iPhone X",
+        "ram": "3G",
+        "cpu": {
+            "name": "Apple A11",
+            "freq": "2.39 GHz",
+            "core": 6
+        }
+    },
+    "iPhone10,4": {
+        "name": "iPhone 8",
+        "ram": "2G",
+        "cpu": {
+            "name": "Apple A11",
+            "freq": "2.39 GHz",
+            "core": 6
+        }
+    },
+    "iPhone10,5": {
+        "name": "iPhone 8 Plus",
+        "ram": "3G",
+        "cpu": {
+            "name": "Apple A11",
+            "freq": "2.39 GHz",
+            "core": 6
+        }
+    },
+    "iPhone10,6": {
+        "name": "iPhone X",
+        "ram": "3G",
+        "cpu": {
+            "name": "Apple A11",
+            "freq": "2.39 GHz",
+            "core": 6
+        }
+    },
     "iPad1,1": {
         "name": "iPad",
         "ram": "256MB",
