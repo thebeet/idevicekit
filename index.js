@@ -251,6 +251,13 @@ class iDeviceClient extends EventEmitter {
             });
     }
 
+    crashreport(serial, resultDir) {
+        if (!_checkSerial(serial)) return Promise.reject('invalid serial number');
+        let cmd = `idevicecrashreport -u ${serial} '${resultDir}'`;
+        return exec(cmd).then(() => {
+            return true;
+        });
+    }
 }
 
 module.exports = new iDeviceClient();
