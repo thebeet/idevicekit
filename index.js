@@ -182,6 +182,19 @@ class iDeviceClient extends EventEmitter {
         });
     }
 
+    name(serial, newName) {
+        if (!_checkSerial(serial)) return Promise.reject('invalid serial number');
+        if (newName === undefined) {
+            newName = '';
+        } else {
+            newName = '"' + newName.replace(/\"/g, '\\"') + '"';
+        }
+        let cmd = 'idevicename -u ' + serial + ' ' + newName;
+        return exec(cmd).then((result) => {
+            return result.trim();
+        });
+    }
+
     // ## shortcut method ##
 
     getBasicInformation(serial) {
