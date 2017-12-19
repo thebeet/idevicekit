@@ -4,6 +4,7 @@ let EventEmitter = require('events');
 let plist = require('plist');
 let extend = require('extend');
 let fs = require('fs');
+const path = require('path');
 
 let exec = require('./exec');
 
@@ -251,11 +252,24 @@ class iDeviceClient extends EventEmitter {
             });
     }
 
-    crashreport(serial, resultDir) {
+    crashreport(serial, appName) {
         if (!_checkSerial(serial)) return Promise.reject('invalid serial number');
-        let cmd = `idevicecrashreport -u "${serial}" -e "${resultDir}"`;
-        return exec(cmd).then(() => {
-            return true;
+        let createTempCmd = `mktemp -d`;
+        return exec(createTempCmd).then((tmpDir) => {
+            tmpDir = tmpDir.trim();
+            let cmd = `idevicecrashreport -u "${serial}" -e "${tmpDir}"`;
+            return exec(cmd).then(() => {
+                let crashLogRegex = new RegExp(`^${appName}.*\.ips$`); 
+                let result = {};
+                fs.readdirSync(tmpDir).forEach((currentFile) => {
+                    let crashLogFileName = crashLogRegex.exec(currentFile);
+                    if (crashLogFileName !== null) {
+                        result.currentFile = fs.readFileSync(path.join(tmpDir, currentFile), 'utf8');
+                    }
+                });
+                
+                return result; 
+            });
         });
     }
 }
