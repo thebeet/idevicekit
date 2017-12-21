@@ -19,6 +19,9 @@ co(function* () {
         console.log(`    status: ${status}`);
         let screenshotStream = yield idevicekit.screencap(device);
         screenshotStream.pipe(fs.createWriteStream(device + '.png'));
+        yield idevicekit.crashreport(device, 'CrashDemo').then((crashLogs) => {
+            console.log(JSON.stringify(crashLogs));
+        });
         idevicekit.syslog(device).then((emitter) => {
             emitter.on('log', (data) => {
                 console.log(JSON.stringify(data));
