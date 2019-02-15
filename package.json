@@ -1,6 +1,6 @@
 {
   "name": "idevicekit",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "NodeJs wrapper for libimobiledevice",
   "main": "index.js",
   "scripts": {

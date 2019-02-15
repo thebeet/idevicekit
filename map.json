@@ -304,6 +304,42 @@
             "core": 6
         }
     },
+    "iPhone11,2": {
+        "name": "iPhone XS",
+        "ram": "4G",
+        "cpu": {
+            "name": "Apple A12",
+            "freq": "2.49 GHz",
+            "core": 6
+        }
+    },
+    "iPhone11,4": {
+        "name": "iPhone XS Max",
+        "ram": "4G",
+        "cpu": {
+            "name": "Apple A12",
+            "freq": "2.49 GHz",
+            "core": 6
+        }
+    },
+    "iPhone11,6": {
+        "name": "iPhone XS Max",
+        "ram": "4G",
+        "cpu": {
+            "name": "Apple A12",
+            "freq": "2.49 GHz",
+            "core": 6
+        }
+    },
+    "iPhone11,8": {
+        "name": "iPhone XR",
+        "ram": "3G",
+        "cpu": {
+            "name": "Apple A12",
+            "freq": "2.49 GHz",
+            "core": 6
+        }
+    },
     "iPad1,1": {
         "name": "iPad",
         "ram": "256MB",
