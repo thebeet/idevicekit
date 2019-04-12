@@ -9,7 +9,8 @@ const path = require('path');
 let exec = require('./exec');
 
 let _checkSerial = (serial) => {
-    return /^[a-z0-9]{40,40}$/.test(serial);
+    return /^[a-z0-9]{40,40}$/.test(serial)
+        || /^[A-Z0-9]{8}-[A-Z0-9]{16}$/.test(serial); // fix for iphone xs xr xmax
 };
 
 class iDeviceClient extends EventEmitter {
