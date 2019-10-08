@@ -340,6 +340,33 @@
             "core": 6
         }
     },
+    "iPhone12,1": {
+        "name": "iPhone 11",
+        "ram": "4G",
+        "cpu": {
+            "name": "Apple A13",
+            "freq": "2.65 GHz",
+            "core": 6
+        }
+    },
+    "iPhone12,3": {
+        "name": "iPhone 11 Pro",
+        "ram": "4G",
+        "cpu": {
+            "name": "Apple A13",
+            "freq": "2.65 GHz",
+            "core": 6
+        }
+    },
+    "iPhone12,5": {
+        "name": "iPhone 11 Pro Max",
+        "ram": "4G",
+        "cpu": {
+            "name": "Apple A13",
+            "freq": "2.65 GHz",
+            "core": 6
+        }
+    },
     "iPad1,1": {
         "name": "iPad",
         "ram": "256MB",
