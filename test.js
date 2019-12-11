@@ -17,7 +17,7 @@ co(function* () {
         console.log(`    battery: ${battery}`);
         console.log(`    resolution: ${resolution['width']}x${resolution['height']}`);
         console.log(`    status: ${status}`);
-        let screenshotStream = yield idevicekit.screencap(device);
+        /*let screenshotStream = yield idevicekit.screencap(device);
         screenshotStream.pipe(fs.createWriteStream(device + '.png'));
         yield idevicekit.crashreport(device, 'CrashDemo').then((crashLogs) => {
             console.log(JSON.stringify(crashLogs));
@@ -29,7 +29,7 @@ co(function* () {
             setTimeout(() => {
                 emitter.emit('close');
             }, 10000);
-        });
+        });*/
     }
 }).catch((err) => {
     console.log(err);
