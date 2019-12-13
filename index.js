@@ -82,6 +82,27 @@ class iDeviceClient extends EventEmitter {
         });
     }
 
+    diagnostics(serial, option) {
+        if (!_checkSerial(serial)) return Promise.reject('invalid serial number');
+        let defaultOption = {
+            'command': 'diagnostics',
+            'key': 'All',
+        };
+        defaultOption = extend(true, defaultOption, option);
+        let cmd = 'idevicediagnostics -u ' + serial + ' ' + defaultOption['command'];
+        if (('key' in defaultOption) && (defaultOption['key'])) {
+            cmd += ' ' + defaultOption['key'];
+        }
+        return exec(cmd).then((stdout) => {
+            try {
+                let result = plist.parse(stdout);
+                return result;
+            } catch (e) {
+                throw e;
+            }
+        });
+    }
+
     screencap(serial, option) {
         if (!_checkSerial(serial)) return Promise.reject('invalid serial number');
         let defaultOption = {
