@@ -203,15 +203,9 @@ class iDeviceClient extends EventEmitter {
 
     name(serial, newName) {
         if (!_checkSerial(serial)) return Promise.reject('invalid serial number');
-        if (newName === undefined) {
-            newName = '';
-        } else {
-            newName = '"' + newName.replace(/\"/g, '\\"') + '"';
-        }
-
         const args = ['-u', serial];
 
-        if(newName) {
+        if(typeof newName !== 'undefined') {
             args.push(newName);
         }
         return exec('idevicename', args).then((result) => {
