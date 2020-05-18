@@ -19,7 +19,7 @@ class iDeviceClient extends EventEmitter {
     }
 
     listDevices() {
-        return exec('idevice_id -l').then((stdout) => {
+        return exec('idevice_id', ['-l']).then((stdout) => {
             let devices = stdout.split('\n');
             let result = [];
             for (let device of devices) {
@@ -36,16 +36,16 @@ class iDeviceClient extends EventEmitter {
 
     getProperties(serial, option) {
         if (!_checkSerial(serial)) return Promise.reject('invalid serial number');
-        let cmd = 'ideviceinfo -u ' + serial + ' -x';
+        const args = ['-u', serial, '-x']
         if (option) {
             if (('simple' in option) && (option['simple'])) {
-                cmd += ' -s';
+                args.push('-s');
             }
             if (('domain' in option) && (option['domain'])) {
-                cmd += ' -q ' + option['domain'];
+                args.push('-q', option['domain']);
             }
         }
-        return exec(cmd).then((stdout) => {
+        return exec('ideviceinfo', args).then((stdout) => {
             try {
                 let result = plist.parse(stdout);
                 return result;
@@ -61,14 +61,15 @@ class iDeviceClient extends EventEmitter {
             'list': 'user'
         };
         defaultOption = extend(true, defaultOption, option);
-        let cmd = 'ideviceinstaller -u ' + serial + ' -l -o xml';
+        const args = ['-u', serial, '-l', '-o', 'xml']
         if (defaultOption['list'] === 'system') {
-            cmd = cmd + ' -o list_system';
+            args.push('-o', 'list_system');
         }
         if (defaultOption['list'] === 'all') {
-            cmd = cmd + ' -o list_all';
+            args.push('-o', 'list_all');
         }
-        return exec(cmd).then((stdout) => {
+
+        return exec('ideviceinstaller', args).then((stdout) => {
             try {
                 let result = [];
                 let packages = plist.parse(stdout);
@@ -89,11 +90,11 @@ class iDeviceClient extends EventEmitter {
             'key': 'All',
         };
         defaultOption = extend(true, defaultOption, option);
-        let cmd = 'idevicediagnostics -u ' + serial + ' ' + defaultOption['command'];
+        const args = ['-u', serial, defaultOption['command']]
         if (('key' in defaultOption) && (defaultOption['key'])) {
-            cmd += ' ' + defaultOption['key'];
+            args.push(defaultOption['key']);
         }
-        return exec(cmd).then((stdout) => {
+        return exec('idevicediagnostics', args).then((stdout) => {
             try {
                 let result = plist.parse(stdout);
                 return result;
@@ -112,9 +113,8 @@ class iDeviceClient extends EventEmitter {
         let sharp = require('sharp');
         let tempfile = require('tempfile');
         let tempTiffFile = tempfile('.tiff');
-        let cmd = 'idevicescreenshot -u ' + serial + ' ' + tempTiffFile;
         return new Promise((resolve, reject) => {
-            exec(cmd).then((stdout) => {
+            exec('idevicescreenshot', ['-u', serial, tempTiffFile]).then((stdout) => {
                 let outputStream = sharp(tempTiffFile).toFormat(defaultOption.format).on('error', (err) => {
                     reject(err);
                 });
@@ -137,16 +137,14 @@ class iDeviceClient extends EventEmitter {
         if (defaultOption.resign) {
             let path = require('path');
             let shell = path.join(__dirname, 'tools', 'r.sh');
-            let cmd = 'sh ' + shell + ' "' + ipa + '" "' + defaultOption.mobileprovision + '" "' + defaultOption.identity +
-                '" "' + ipa + '" "' + defaultOption.keychainPassword + '"';
-            resultPromise = exec(cmd, {timeout: 300000});
+            resultPromise = exec(['sh', shell, ipa, defaultOption.mobileprovision,
+                                    defaultOption.identity, ipa, defaultOption.keychainPassword], {timeout: 300000});
         } else {
             resultPromise = Promise.resolve();
         }
-        let cmd = 'ideviceinstaller -u ' + serial + ' -i ' + ipa;
         return resultPromise.then(() => {
             return new Promise((resolve, reject) => {
-                exec(cmd, {timeout: 300000}).then((output) => {
+                exec('ideviceinstaller', ['-u', serial, '-i', ipa], {timeout: 300000}).then((output) => {
                     if (/\s - Complete\s/.test(output)) {
                         resolve(output);
                     } else {
@@ -191,29 +189,26 @@ class iDeviceClient extends EventEmitter {
 
     reboot(serial) {
         if (!_checkSerial(serial)) return Promise.reject('invalid serial number');
-        let cmd = 'idevicediagnostics restart -u ' + serial;
-        return exec(cmd).then(() => {
+        return exec('idevicediagnostics', ['restart', '-u', serial]).then(() => {
             return true;
         });
     }
 
     shutdown(serial) {
         if (!_checkSerial(serial)) return Promise.reject('invalid serial number');
-        let cmd = 'idevicediagnostics shutdown -u ' + serial;
-        return exec(cmd).then(() => {
+        return exec('idevicediagnostics', ['shutdown', '-u', serial]).then(() => {
             return true;
         });
     }
 
     name(serial, newName) {
         if (!_checkSerial(serial)) return Promise.reject('invalid serial number');
-        if (newName === undefined) {
-            newName = '';
-        } else {
-            newName = '"' + newName.replace(/\"/g, '\\"') + '"';
+        const args = ['-u', serial];
+
+        if(typeof newName !== 'undefined') {
+            args.push(newName);
         }
-        let cmd = 'idevicename -u ' + serial + ' ' + newName;
-        return exec(cmd).then((result) => {
+        return exec('idevicename', args).then((result) => {
             return result.trim();
         });
     }
@@ -289,11 +284,9 @@ class iDeviceClient extends EventEmitter {
 
     crashreport(serial, appName) {
         if (!_checkSerial(serial)) return Promise.reject('invalid serial number');
-        let createTempCmd = `mktemp -d`;
-        return exec(createTempCmd).then((tmpDir) => {
+        return exec('mktemp', ['-d']).then((tmpDir) => {
             tmpDir = tmpDir.trim();
-            let cmd = `idevicecrashreport -u "${serial}" -e "${tmpDir}"`;
-            return exec(cmd).then(() => {
+            return exec('idevicecrashreport', ['-u', serial, '-e', tmpDir]).then(() => {
                 let crashLogRegex = new RegExp(`^${appName}.*\.ips$`); 
                 let result = {};
                 fs.readdirSync(tmpDir).forEach((currentFile) => {

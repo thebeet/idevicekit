@@ -1,6 +1,6 @@
 let child_process = require('child_process');
 
-let exec = (cmd, option) => {
+let exec = (cmd, args, option) => {
     let defaultOption = {
         encoding: 'utf8',
         timeout: 30000,
@@ -14,7 +14,7 @@ let exec = (cmd, option) => {
         defaultOption = extend(true, defaultOption, option);
     }
     return new Promise((resolve, reject) => {
-        child_process.exec(cmd, defaultOption, (err, stdout, stderr) => {
+        child_process.execFile(cmd, args, defaultOption, (err, stdout, stderr) => {
             if (err) {
                 reject(err, stdout, stderr);
             } else {
