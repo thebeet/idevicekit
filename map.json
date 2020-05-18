@@ -367,6 +367,15 @@
             "core": 6
         }
     },
+    "iPhone12,8": {
+        "name": "iPhone SE (2nd generation)",
+        "ram": "3G",
+        "cpu": {
+            "name": "Apple A13",
+            "freq": "2.65 GHz",
+            "core": 6
+        }
+    },
     "iPad1,1": {
         "name": "iPad",
         "ram": "256MB",
