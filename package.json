@@ -24,7 +24,7 @@
     "logagent-js": "^1.2.39",
     "npm": "^6.8.0",
     "plist": "^2.0.1",
-    "sharp": "^0.26.2",
+    "sharp": "^0.28.3",
     "tempfile": "^1.1.1"
   },
   "engines": {
